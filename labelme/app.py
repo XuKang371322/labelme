@@ -18,8 +18,7 @@ from PyQt5 import QtCore
 from PyQt5 import QtGui
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
-from rdflib import Literal
-from traitlets import Instance
+
 
 from labelme import __appname__
 from labelme._automation import bbox_from_text
@@ -2162,7 +2161,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 return i
 
     
-    def importDroppedImageFiles(self, imageFiles:Literal[str]):
+    def importDroppedImageFiles(self, imageFiles):
         extensions = [
             f".{fmt.data().decode().lower()}"
             for fmt in QtGui.QImageReader.supportedImageFormats()
